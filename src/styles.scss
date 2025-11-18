@@ -1,0 +1,28 @@
+@use '@angular/material' as mat;
+
+html {
+  @include mat.theme((
+    color: (
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    typography: Roboto,
+  ));
+}
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  padding: 0;
+}
+
+mat-toolbar {
+  @include mat.toolbar-overrides((
+    container-background-color: var(--mat-sys-primary),
+    container-text-color: var(--mat-sys-on-primary),
+  ));
+
+  @include mat.icon-button-overrides((
+    icon-color: var(--mat-sys-on-primary),
+  ));
+}
